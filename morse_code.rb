@@ -25,3 +25,10 @@ def decode_word (str)
   end
 return word
 end
+
+def decode (str)
+mess = ''
+
+return mess
+end
+
