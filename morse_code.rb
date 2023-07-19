@@ -33,6 +33,5 @@ def decode(str)
   new_message.join(' ')
 end
 
-
 message = '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'
 puts decode(message)
