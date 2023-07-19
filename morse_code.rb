@@ -1,4 +1,4 @@
-def decode_char (str)
+def decode_char(str)
   alph = {
     '.-' => 'A', '-...' => 'B', '-.-.' => 'C', '-..' => 'D',
     '.' => 'E', '..-.' => 'F', '....' => 'H', '..' => 'I',
@@ -7,10 +7,10 @@ def decode_char (str)
     '...' => 'S', '-' => 'T', '..-' => 'U', '...-' => 'V', '.--' => 'W',
     '-..-' => 'X', '-.--' => 'Y', '--..' => 'Z'
   }
-return alph[str]
+  alph[str]
 end
 
-def decode_word (str)
+def decode_word(str)
   word = ''
   char = ''
   str.length.times do |i|
@@ -20,15 +20,17 @@ def decode_word (str)
     elsif i == str.length - 1
       char = "#{char}#{str[i]}"
       word = "#{word}#{decode_char(char)}"
-    else  char = "#{char}#{str[i]}"
+    else
+      char = "#{char}#{str[i]}"
     end
   end
-return word
+  word
 end
 
-def decode (str)
-mess = ''
-
-return mess
+def decode(str)
+  mess = str.split('   ')
+  new_message = mess.map { |word| decode_word(word) }
+  new_message.join(' ')
 end
 
+decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
